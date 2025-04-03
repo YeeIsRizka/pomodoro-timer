@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+:root {
+    --warna1: #1d1d1d;
+    --warna2: #00ff00;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    background-color: var(--warna1);
+    color: var(--warna2);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#pomodoro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+#interval-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#setting-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#setting-container .btn {
+    flex: 1;
+    max-width: 100px;
+}
+
+#timer-container {
+    margin: 2rem 0;
+    background-color: var(--warna1);
+    color: var(--warna2);
+    padding: 1rem;
+    border: 4px solid var(--warna2);
+}
+
+#time-left {
+    font-size: 7rem;
+    letter-spacing: 2px;
+}
+
+button,
+button#saveSettings,
+button#resetSettings,
+#customizeColors,
+#customTime {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    color: var(--warna2);
+    background-color: var(--warna1);
+    border: 4px solid var(--warna2);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+
+button:hover,
+button#saveSettings:hover,
+button#resetSettings:hover,
+#customizeColors:hover,
+#customTime:hover {
+    background-color: var(--warna2);
+    color: var(--warna1);
+}
+
+button#saveSettings,
+button#resetSettings,
+button#saveColors,
+button#resetColors {
+    width: 48%;
+}
+
+.active-mode {
+    background-color: var(--warna2);
+    color: var(--warna1);
+    border-color: var(--warna2);
+}
+
+.active-mode:hover {
+    background-color: var(--warna2);
+    color: var(--warna1);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: var(--warna1);
+    margin: 15% auto;
+    padding: 1rem;
+    border: 4px solid var(--warna2);
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    color: var(--warna2);
+}
+
+.close {
+    color: var(--warna2);
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: var(--warna2);
+}
+
+.setting-option {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.setting-option label {
+    font-size: 0.8rem;
+    color: var(--warna2);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+select,
+#focusTime,
+#shortBreakTime,
+#longBreakTime {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    color: var(--warna2);
+    background-color: var(--warna1);
+    border: 2px solid var(--warna2);
+    padding: 0.5rem;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--warna2);
+    box-shadow: 0 0 5px var(--warna2);
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--warna1);
+    color: var(--warna2);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.notification.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+}
