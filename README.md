@@ -1,2 +1,3 @@
 # pomodoro-timer
-A simple and customizable Pomodoro timer built with HTML, CSS, and JavaScript.
+A simple Pomodoro timer built with HTML, CSS, and JavaScript—just for fun! 🎯   
+Designed as a lightweight widget for Notion, so you can stay focused without leaving your workspace.
